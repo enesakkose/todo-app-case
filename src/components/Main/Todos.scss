@@ -1,7 +1,6 @@
 .todos{
     padding: 2rem 0;
-
-    h1{
-        padding-bottom: 1rem;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }

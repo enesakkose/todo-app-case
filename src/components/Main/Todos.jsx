@@ -7,6 +7,17 @@ function Todos() {
     <div className='todos'>
         <h1>TODOS</h1>
         <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
     </div>
   )
 }
