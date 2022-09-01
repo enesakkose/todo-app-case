@@ -1,0 +1,62 @@
+.todo{
+    border-bottom: 2px solid $earlGray;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+
+    &__checkBtn{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        border: 1px solid $gray;
+        position: relative;
+
+        .tick{
+            color: $white;
+            background-color: $secondaryColor;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            inset: 0;
+        }
+    }
+    
+    &__actionBtns{
+        display: flex;
+        align-items: center;
+        gap: .875rem;
+
+        button{
+            opacity: .5;
+
+            &:hover{
+                opacity: 1;
+            }
+        } 
+    }
+
+    p{
+        flex: 1;
+        font-size: 1.1rem;
+    }
+}
+
+.checked{
+    background-color: rgba($secondaryColor, .1);
+    border-radius: .5rem;
+    transition: 200ms all ease-in-out;
+    opacity: .4;
+    
+    p{
+        pointer-events: none;
+    }
+
+    .todo__actionBtns{
+        button{
+            pointer-events: none;
+        }  
+    }
+    
+}

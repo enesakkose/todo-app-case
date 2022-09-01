@@ -1,0 +1,11 @@
+.header{
+    background-color: rgba($secondaryColor, .07);
+    
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+    }
+    
+}
