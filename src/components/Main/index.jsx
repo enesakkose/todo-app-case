@@ -5,14 +5,12 @@ import { useSelector } from 'react-redux'
 import Modal from '@/components/Modal'
 import '@/components/Main/index.scss'
 
-
-
 function Main() {
 
   const { open } = useSelector(state => state.modal)
 
   return (
-    <main className='main'>
+    <main className={`main ${open && 'noScroll'}`}>
         <div className="container">
           {open && <Modal/>}
           <MainHeader/>

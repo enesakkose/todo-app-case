@@ -1,15 +1,14 @@
 import React from 'react'
 import Icon from '@/components/Icon'
-import { closeModal, openModal } from '@/store/modal'
-import { useDispatch, useSelector } from 'react-redux'
+import { openModalHandle } from '@/utils'
 import '@/components/Main/MainHeader.scss'
 
 function MainHeader() {
-  const dispatch = useDispatch()
+
   const addTodo = () => {
-    dispatch(openModal({
+    openModalHandle({
       name: 'CreateTodoModal'
-    }))
+    })
   }
 
   return (

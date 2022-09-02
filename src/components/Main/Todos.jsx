@@ -1,5 +1,6 @@
 import React from 'react'
 import Todo from '@/components/Main/Todo'
+import EmptyTodos from '@/components/Main/EmptyTodos'
 import '@/components/Main/Todos.scss'
 
 function Todos() {

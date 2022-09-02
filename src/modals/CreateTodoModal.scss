@@ -1,19 +1,11 @@
 .createTodoModal{
-    position: fixed;
-    top: 20%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    background-color: $white;
-    box-shadow: $modalBoxShadow;
-    padding: 1rem;
-    border-radius: .5rem;
-    width: 30%;
-
-    input{
-        width: 100%;
-        padding: .5rem 0;
-        background-color: transparent;
+    .addBtn{
+        background-color: $primaryColor;
         
-    }
-    
+        &:disabled{
+            cursor: not-allowed;
+            opacity: .6;
+        }
+    }  
+      
 }
