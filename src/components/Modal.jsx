@@ -5,12 +5,12 @@ import '@/components/Modal.scss'
 
 function Modal() {
 
-  const { name } = useSelector(state => state.modal)
+  const { name, data } = useSelector(state => state.modal)
   const modal = modals.find(modal => modal.name === name)
     
   return (
     <div className='modal'>
-     <modal.element/>           
+     <modal.element data={data}/>           
     </div>
   )
 }

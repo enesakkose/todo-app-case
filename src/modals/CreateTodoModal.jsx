@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
 import { closeModalHandle } from '@/utils'
-import '@/modals/CreateTodoModal.scss'
+import { nanoid } from 'nanoid'
+import { createTodo } from '@/api'
+import { useDispatch } from 'react-redux'
+
 
 function CreateTodoModal() {
   
-  const [ todo, setTodo ] = useState('')
+  const dispatch = useDispatch()  
+  const [ todo, setTodo ] = useState({
+    content: '',
+    isCompleted: false,
+    id: nanoid()
+  })
 
   const formSubmit = (e) => {
     e.preventDefault()
+    dispatch(createTodo(todo))
+    closeModalHandle()
   }
 
-  const addTodo = () => {
-    console.log('click')
-  }
+
 
   return (
     <div className="createTodoModal">
@@ -20,17 +28,19 @@ function CreateTodoModal() {
           <h2>Add Todo</h2>
           <textarea 
             name="todo" 
-            rows='3' 
+            rows='3'
+            maxlength='200'
             placeholder='Todo...'
-            value={todo}
-            onChange={(e) => setTodo(e.target.value)}
+            value={todo.content}
+            onChange={(e) => setTodo({content: e.target.value})}
           />
+          {todo.content.length === 200 && 'You have reached to max character'}
           <div className="modalForm__btns">
-            <button onClick={() => closeModalHandle()}>Cancel</button>
+            <button type='button' onClick={() => closeModalHandle()}>Cancel</button>
             <button 
-              disabled={todo.trim().length < 3} 
-              onClick={addTodo} 
-              className='addBtn'
+            disabled={todo.content.trim().length < 3} 
+            type='submit'
+            className='actionBtn'
             >
               Add
             </button>
