@@ -1,19 +1,13 @@
 import React from 'react'
 import Icon from '@/components/Icon'
-import { openModalHandle } from '@/utils'
+import { createTodoModal } from '@/utils'
 import '@/components/Main/MainHeader.scss'
 
 function MainHeader() {
 
-  const addTodo = () => {
-    openModalHandle({
-      name: 'CreateTodoModal'
-    })
-  }
-
   return (
     <header className='mainHeader'>
-        <button onClick={addTodo} className="addTodo">
+        <button onClick={() => createTodoModal()} className="addTodo">
             <Icon name='Plus' size={23}/>
             Add TODO
         </button>

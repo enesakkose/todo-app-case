@@ -8,3 +8,9 @@ export const openModalHandle = (name) => {
 export const closeModalHandle = () => {
     store.dispatch(closeModal())
 }
+
+export const createTodoModal = () => {
+    openModalHandle({
+        name: 'CreateTodoModal'
+    })
+}

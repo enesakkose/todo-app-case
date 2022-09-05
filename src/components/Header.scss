@@ -8,4 +8,12 @@
         height: 3rem;
     }
     
+    &__userActions{
+        .createTodoBtn{
+
+            &:active{
+                transform: translateY(1px);
+            }
+        }
+    }
 }

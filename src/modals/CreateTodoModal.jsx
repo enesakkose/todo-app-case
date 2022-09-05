@@ -5,8 +5,8 @@ import { createTodo } from '@/api'
 import { useDispatch } from 'react-redux'
 
 
-function CreateTodoModal() {
-  
+function CreateTodoModal({focusRef}) {
+
   const dispatch = useDispatch()  
   const [ todo, setTodo ] = useState({
     content: '',
@@ -20,13 +20,12 @@ function CreateTodoModal() {
     closeModalHandle()
   }
 
-
-
   return (
     <div className="createTodoModal">
       <form onSubmit={formSubmit} className='modalForm'>
           <h2>Add Todo</h2>
-          <textarea 
+          <textarea
+            ref={focusRef}
             name="todo" 
             rows='3'
             maxlength='200'

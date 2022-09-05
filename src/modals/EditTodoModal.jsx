@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateTodo } from '@/api'
 
 
-function EditTodoModal({data}) {
+function EditTodoModal({data, focusRef}) {
   const dispatch = useDispatch()
   const [ content, setContent ] = useState(data.content)
 
@@ -20,7 +20,8 @@ function EditTodoModal({data}) {
     <div className="editTodoModal">
       <form onSubmit={formSubmit} className='modalForm'>
           <h2>Edit Todo</h2>
-          <textarea 
+          <textarea
+            ref={focusRef}
             name="todo" 
             rows='3'
             maxlength='200'

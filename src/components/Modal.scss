@@ -22,6 +22,7 @@
         flex-direction: column;
         gap: .250rem;
         z-index: 10;
+        animation: sss 400ms ease-in-out;
 
         &__btns{
             display: flex;
@@ -67,4 +68,13 @@
         }
     }
 
+}
+
+@keyframes sss {
+    0%{ 
+        top: -20%;
+    }
+    100%{
+        top: 20%;
+    }
 }
