@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { closeModalHandle } from '@/utils'
+import { useFocus } from '@/hooks/useFocus'
 import { nanoid } from 'nanoid'
 import { createTodo } from '@/api'
 import { useDispatch } from 'react-redux'
 
 
-function CreateTodoModal({focusRef}) {
-
+function CreateTodoModal({outClickRef}) {
+  const focusRef = useFocus()
   const dispatch = useDispatch()  
   const [ todo, setTodo ] = useState({
     content: '',
@@ -22,7 +23,7 @@ function CreateTodoModal({focusRef}) {
 
   return (
     <div className="createTodoModal">
-      <form onSubmit={formSubmit} className='modalForm'>
+      <form ref={outClickRef} onSubmit={formSubmit} className='modalForm'>
           <h2>Add Todo</h2>
           <textarea
             ref={focusRef}

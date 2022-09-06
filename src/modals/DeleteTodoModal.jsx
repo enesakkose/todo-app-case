@@ -3,7 +3,7 @@ import { closeModalHandle } from '@/utils'
 import { deleteReq } from '@/api'
 import { useDispatch } from 'react-redux'
 
-function DeleteTodoModal({data}) {
+function DeleteTodoModal({data, outClickRef}) {
   
   const dispatch = useDispatch()
 
@@ -12,9 +12,10 @@ function DeleteTodoModal({data}) {
     dispatch(deleteReq(data.id))
     closeModalHandle()
   }
+  
   return (
     <div className='deleteTodoModal'>
-        <form onSubmit={formSubmit} className='modalForm'>
+        <form ref={outClickRef} onSubmit={formSubmit} className='modalForm'>
           <h2>Delete Todo</h2>
           <p>This todo will be deleted. Are you sure?</p>
           <div className="modalForm__btns">

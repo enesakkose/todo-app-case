@@ -13,7 +13,6 @@
   font-size: 16px;
   font-weight: 400;
   background-color: $bodyColor;
-  
 }
 
 .container{
@@ -32,4 +31,39 @@ h1{
 
 h2{
   font-size: 1rem;
+}
+
+.darkMode{
+  
+  background-color: $darkTheme;
+  color: $earlGray;
+  transition: 150ms background-color ease-out;
+
+  button{
+    color: $earlGray;
+  }
+
+  .header{
+    background-color: $darkTheme;
+  }
+  
+  .modal{
+    
+    .modalForm{
+      background-color: $darkTheme;
+
+      button{
+        color: $black;
+      }
+      
+      textarea{
+        color: $earlGray;
+      }
+    }
+    
+  }
+}
+
+.lightMode{
+  transition: 150ms ease-in-out;
 }

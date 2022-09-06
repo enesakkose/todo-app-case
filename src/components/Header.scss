@@ -9,6 +9,10 @@
     }
     
     &__userActions{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
         .createTodoBtn{
 
             &:active{

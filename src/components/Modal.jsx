@@ -1,17 +1,23 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useFocus } from '@/hooks/useFocus'
+import { useClickedOut } from '@/hooks/useClickedOut'
+import { closeModalHandle } from '@/utils'
 import modals from '@/modals'
 import '@/components/Modal.scss'
 
 function Modal() {
-  const focusRef = useFocus()
+  const outClickRef = useClickedOut(() => {
+    closeModalHandle()
+  })
   const { name, data } = useSelector(state => state.modal)
   const modal = modals.find(modal => modal.name === name)
   
   return (
     <div className='modal'>
-     <modal.element data={data} focusRef={focusRef}/>           
+     <modal.element 
+     data={data} 
+     outClickRef={outClickRef} 
+     />           
     </div>
   )
 }

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { closeModalHandle } from '@/utils'
-import { useSelector, useDispatch } from 'react-redux'
+import { useFocus } from '@/hooks/useFocus'
+import { useDispatch } from 'react-redux'
 import { updateTodo } from '@/api'
 
 
-function EditTodoModal({data, focusRef}) {
+function EditTodoModal({data, outClickRef}) {
+  const focusRef = useFocus()
   const dispatch = useDispatch()
   const [ content, setContent ] = useState(data.content)
 
@@ -16,9 +18,11 @@ function EditTodoModal({data, focusRef}) {
     closeModalHandle()
   }
 
+  const end = content.length
+
   return (
     <div className="editTodoModal">
-      <form onSubmit={formSubmit} className='modalForm'>
+      <form ref={outClickRef} onSubmit={formSubmit} className='modalForm'>
           <h2>Edit Todo</h2>
           <textarea
             ref={focusRef}
@@ -26,6 +30,7 @@ function EditTodoModal({data, focusRef}) {
             rows='3'
             maxlength='200'
             placeholder='Todo...'
+            onFocus={(e) => e.target.setSelectionRange(end,end)}
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />

@@ -1,7 +1,9 @@
 import React from 'react'
 import Icon from '@/components/Icon'
 import { createTodoModal } from '@/utils'
+import ThemeBtn from '@/components/ThemeBtn'
 import '@/components/Header.scss'
+
 
 function Header() {
   return (
@@ -12,6 +14,7 @@ function Header() {
               <button className='createTodoBtn' onClick={() => createTodoModal()}>
                 <Icon name='Plus' size={19}/>
               </button>
+              <ThemeBtn/>
             </div>
         </div>
     </header>
