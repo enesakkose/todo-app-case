@@ -27,8 +27,8 @@ function EditTodoModal({data, outClickRef}) {
           <textarea
             ref={focusRef}
             name="todo" 
-            rows='3'
-            maxLength='200'
+            rows={3}
+            maxLength={200}
             placeholder='Todo...'
             onFocus={(e) => e.target.setSelectionRange(end,end)}
             value={content}

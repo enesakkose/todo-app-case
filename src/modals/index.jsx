@@ -1,6 +1,7 @@
 import CreateTodoModal from "@/modals/CreateTodoModal"
 import DeleteTodoModal from "@/modals/DeleteTodoModal"
 import EditTodoModal from "@/modals/EditTodoModal"
+import CreateUserModal from "@/modals/CreateUserModal"
 
 const modals = [
     {
@@ -14,6 +15,10 @@ const modals = [
     {
         name: 'DeleteTodoModal',
         element: DeleteTodoModal
+    },
+    {
+        name: 'CreateUserModal',
+        element: CreateUserModal
     }
 ]
 

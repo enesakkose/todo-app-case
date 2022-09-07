@@ -69,6 +69,21 @@
         }
     }
 
+    input{
+        font-size: 1rem;
+        margin: .5rem 0;
+        border: 1px solid $earlGray;
+        background-color: transparent;
+        padding: .5rem;
+        border-radius: .25rem;
+        letter-spacing: 1px;
+        width: 100%;
+
+        &:focus{
+            border-color: $gray;
+        }
+    }
+
     button{
         padding: .5rem;
         border-radius: .5rem;
@@ -76,6 +91,13 @@
 
         &:hover{
             opacity: .8;
+        }
+    }
+
+    .createUserModal{
+        .modalForm{
+            align-items: center;
+            gap: 1rem;
         }
     }
 

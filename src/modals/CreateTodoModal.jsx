@@ -28,8 +28,8 @@ function CreateTodoModal({outClickRef}) {
           <textarea
             ref={focusRef}
             name="todo" 
-            rows='3'
-            maxLength='200'
+            rows={3}
+            maxLength={200}
             placeholder='Todo...'
             value={todo.content}
             onChange={(e) => setTodo({content: e.target.value})}
