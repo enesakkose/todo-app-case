@@ -1,6 +1,9 @@
 .header{
     background-color: $primaryColor;
-    
+
+    @media (max-width:768px) {
+        padding: .875rem 2rem;
+    }
     .container{
         display: flex;
         align-items: center;

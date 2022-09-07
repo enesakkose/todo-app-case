@@ -28,7 +28,7 @@ function EditTodoModal({data, outClickRef}) {
             ref={focusRef}
             name="todo" 
             rows='3'
-            maxlength='200'
+            maxLength='200'
             placeholder='Todo...'
             onFocus={(e) => e.target.setSelectionRange(end,end)}
             value={content}

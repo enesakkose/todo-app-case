@@ -3,7 +3,10 @@
     &::after{
         position: fixed;
         content: '';
-        inset: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background-color: rgba($black, 0.3);
         animation: opacity .4s ease-in-out;
         z-index: 1;
@@ -24,6 +27,12 @@
         gap: .250rem;
         z-index: 10;
         animation: top 400ms ease-in-out;
+
+        @media (max-width:768px) {
+            width: 250px;
+            top: 40%;
+            animation: mobileTop 400ms ease-in-out;
+        }
 
         &__btns{
             display: flex;
@@ -75,6 +84,7 @@
 @keyframes top {
     0%{ 
         top: 15%;
+        
     }
     
     100%{
@@ -89,5 +99,16 @@
 
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes mobileTop {
+    0%{ 
+        top: 30%;
+        
+    }
+    
+    100%{
+        top: 40%;
     }
 }
