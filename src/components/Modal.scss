@@ -5,6 +5,7 @@
         content: '';
         inset: 0;
         background-color: rgba($black, 0.3);
+        animation: bbb .4s ease-in-out;
         z-index: 1;
     }
 
@@ -73,10 +74,20 @@
 
 @keyframes sss {
     0%{ 
-        top: -20%;
+        top: 15%;
     }
     
     100%{
         top: 20%;
+    }
+}
+
+@keyframes bbb {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
     }
 }

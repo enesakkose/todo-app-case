@@ -6,7 +6,7 @@ const baseUrl = 'https://631058b6826b98071a3ead24.mockapi.io/todos'
 export const fetchTodos = () => async(dispatch) => {
   try {
     const { data } = await axios.get(`${baseUrl}`)
-    dispatch(getTodo(data))
+    dispatch(getTodo(data.reverse()))
 
   } catch (error) {
     console.log(error.message)
