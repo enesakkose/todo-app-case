@@ -8,9 +8,12 @@ function ThemeBtn() {
   const dispatch = useDispatch()
 
   const { theme } = useSelector(state => state.theme)
-  useEffect(() => {
-    localStorage.setItem("darkMode", JSON.stringify(theme))
+  
+  useEffect(()=> {
+    localStorage.setItem("theme",JSON.stringify(theme))
   }, [theme])
+  
+  
   return (
     <button onClick={() => dispatch(setTheme(!theme))} className='themeBtn'>
       <div className="themeBtn__icons">
