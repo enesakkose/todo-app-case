@@ -9,8 +9,8 @@ export const closeModalHandle = () => {
     store.dispatch(closeModal())
 }
 
-export const createTodoModal = () => {
+export const createTodoModal = (user) => {
     openModalHandle({
-        name: 'CreateTodoModal'
+        name: user ? 'CreateTodoModal' : 'CreateUserModal'
     })
 }

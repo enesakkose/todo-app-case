@@ -56,11 +56,15 @@ h2{
         color: $black;
       }
       
-      textarea{
+      textarea, input{
         color: $earlGray;
       }
     }
-    
+  }
+
+  .userBtn{
+    color: $earlGray;
+    background-color: rgba($black, .4);
   }
 }
 

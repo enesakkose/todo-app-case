@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { closeModalHandle } from '@/utils'
 import { useFocus } from '@/hooks/useFocus'
-import { useDispatch, useSelector } from 'react-redux'
-import { user } from '@/store/auth'
+import { useDispatch } from 'react-redux'
+import { userAction } from '@/store/auth'
 
 function CreateUserModal({outClickRef}) {
   const focusRef = useFocus()
   const dispatch = useDispatch()
-  const [ userName, setUserName] = useState('')
+  const [ userName, setUserName ] = useState('')
    
   const createUserSubmit = (e) => {
     e.preventDefault()
-    dispatch(user(userName))
+    dispatch(userAction(userName))
     closeModalHandle()
   }
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(userName))
-  }, [userName])
+  }, [createUserSubmit])
 
   return (
     <div className='createUserModal'>

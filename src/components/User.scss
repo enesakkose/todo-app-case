@@ -1,10 +1,24 @@
-.userBtn{
-    background-color: $bodyColor;
-    padding: .250rem .875rem;
-    border-radius: 1.5rem;
-    font-weight: 600;
+.user{
+    display: flex;
+    align-items: center;   
+    gap: .875rem;
 
-    &:active{
-        transform: translateY(.5px);
+    button{
+        background-color: $bodyColor;
+        padding: .250rem .875rem;
+        border-radius: 1.5rem;
+        font-weight: 600;
+
+        &:active{
+            transform: translateY(.5px);
+        }
     }
-}
+
+    .noClick{
+        pointer-events: none;
+    }
+    
+    .logoutBtn{        
+        background-color: rgba($secondaryColor, .5);
+    }
+}     

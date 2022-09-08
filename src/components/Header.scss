@@ -17,6 +17,9 @@
         gap: 1rem;
 
         .createTodoBtn{
+            @media (max-width: 768px) {
+                display: none;
+            }
 
             &:active{
                 transform: translateY(1px);

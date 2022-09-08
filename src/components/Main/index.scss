@@ -1,6 +1,14 @@
 .main{
     height: calc(100vh - 3rem);
-    overflow-y: scroll;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar{
+        width: .5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $gray; 
+    }
 
     .container{
        padding: 2rem 5rem 0;  
@@ -8,5 +16,8 @@
 }
 
 .noScroll{
-    
+    position: static;
+    overflow-y: auto;
+
 }
+

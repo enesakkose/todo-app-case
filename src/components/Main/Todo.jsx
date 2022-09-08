@@ -9,7 +9,6 @@ function Todo({todo}) {
     const dispatch = useDispatch()
     const [ isCompleted, setIsCompleted ] = useState(todo.isCompleted)
     
-    
     const editTodoBtn = (todo) => {
       openModalHandle({
         name: 'EditTodoModal',
