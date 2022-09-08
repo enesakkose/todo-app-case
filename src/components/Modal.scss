@@ -69,6 +69,14 @@
         padding: .5rem;
         margin: .5rem 0;
 
+        &::-webkit-scrollbar{
+            width: .5rem;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: $gray; 
+        }
+
         &:focus{
             border-color: $gray;
         }
