@@ -10,7 +10,7 @@ function Main() {
   const { open } = useSelector(state => state.modal)
 
   return (
-    <main className={`main ${open && 'noScroll'}`}>
+    <main className='main'>
         <div className="container">
           {open && <Modal/>}
           <MainHeader/>
