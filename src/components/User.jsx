@@ -24,7 +24,7 @@ function User() {
       <button 
         className={`userBtn ${user && 'noClick'}`} 
         onClick={createUserModal}
-        >
+      >
         {user ? user : 'Create User'}
       </button>
       {user && <button className='logoutBtn' onClick={logout}>

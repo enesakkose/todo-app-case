@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    todos: []
+    todos: null
 }
 
 const todo = createSlice({
