@@ -1,4 +1,4 @@
-This web application was created with Reactjs. CRUD operations are done using the [mockapi.io] (mockapi.io) website. If you want to use this app on your device follow to below;
+This web application was created with Reactjs. CRUD operations are done using the [mockapi.io](mockapi.io) website. If you want to use this app on your device follow to below;
 
 1. Load to dependencies and running
 
@@ -10,4 +10,4 @@ yarn
 yarn dev
 ```
 
-2. Enter to your browser [http://localhost:5173] (http://localhost:5173)
+2. Enter to your browser [http://localhost:5173](http://localhost:5173)
