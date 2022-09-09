@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { closeModalHandle } from '@/utils'
 import { useFocus } from '@/hooks/useFocus'
+import { usePressEnter } from '@/hooks/usePressEnter'
 import { nanoid } from 'nanoid'
 import { createTodo } from '@/api'
 import { useDispatch } from 'react-redux'
-
 
 function CreateTodoModal({outClickRef}) {
   const focusRef = useFocus()
@@ -20,7 +20,7 @@ function CreateTodoModal({outClickRef}) {
     dispatch(createTodo(todo))
     closeModalHandle()
   }
-
+  
   return (
     <div className="createTodoModal">
       <form ref={outClickRef} onSubmit={formSubmit} className='modalForm'>
@@ -32,15 +32,21 @@ function CreateTodoModal({outClickRef}) {
             maxLength={200}
             placeholder='Todo...'
             value={todo.content}
+            onKeyPress={usePressEnter(formSubmit, todo.content)}
             onChange={(e) => setTodo({content: e.target.value})}
           />
           {todo.content.length === 200 && 'You have reached to max character'}
           <div className="modalForm__btns">
-            <button type='button' onClick={() => closeModalHandle()}>Cancel</button>
             <button 
-            disabled={todo.content.trim().length < 3} 
-            type='submit'
-            className='actionBtn'
+              type='button' 
+              onClick={() => closeModalHandle()}
+            >
+              Cancel
+            </button>
+            <button 
+              disabled={todo.content.trim().length < 3} 
+              type='submit'
+              className='actionBtn'
             >
               Add
             </button>

@@ -3,7 +3,7 @@ import { closeModalHandle } from '@/utils'
 import { useFocus } from '@/hooks/useFocus'
 import { useDispatch } from 'react-redux'
 import { updateTodo } from '@/api'
-
+import { usePressEnter } from '@/hooks/usePressEnter'
 
 function EditTodoModal({data, outClickRef}) {
   const focusRef = useFocus()
@@ -17,7 +17,7 @@ function EditTodoModal({data, outClickRef}) {
     }))
     closeModalHandle()
   }
-
+  
   const end = content.length
 
   return (
@@ -32,6 +32,7 @@ function EditTodoModal({data, outClickRef}) {
             placeholder='Todo...'
             onFocus={(e) => e.target.setSelectionRange(end,end)}
             value={content}
+            onKeyPress={usePressEnter(formSubmit, content)}
             onChange={(e) => setContent(e.target.value)}
           />
           {content.length === 200 && 'You have reached to max character'}
