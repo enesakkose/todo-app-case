@@ -14,7 +14,7 @@ function Todos() {
   }, [])
 
   const { todos } = useSelector(state => state.todo)
-  console.log(todos)
+
   if(todos === null) return <Loading/>
   if(todos.length === 0) return <EmptyTodos/> 
   

@@ -1,9 +1,10 @@
 import SVG from "react-inlinesvg";
 
+
 function Icon({ name, size = 16, ...props }) {
 	return (
 		<SVG
-			src={`../src/components/icons/${name}.svg`}
+			src={`../src/assets/icons/${name}.svg`}
 			width={size}
 			height={size}
 			{...props}
