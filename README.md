@@ -6,6 +6,7 @@ This web application was created with Reactjs. CRUD operations made with API fro
 - [React](https://reactjs.org/) - JS library
 - [Redux-toolkit](https://redux-toolkit.js.org) - For global state management
 - [Scss](https://sass-lang.com) - For styles
+- [Vercel](https://vercel.com) - For deploy
 
 ## For use
 
