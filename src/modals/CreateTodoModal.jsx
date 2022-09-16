@@ -17,6 +17,9 @@ function CreateTodoModal({outClickRef}) {
 
   const formSubmit = (e) => {
     e.preventDefault()
+    if(todo.content.trim().length < 3 ){
+       return alert('Todo length should be three or more')
+    }
     dispatch(createTodo(todo))
     closeModalHandle()
   }

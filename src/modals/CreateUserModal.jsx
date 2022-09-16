@@ -11,6 +11,9 @@ function CreateUserModal({outClickRef}) {
    
   const createUserSubmit = (e) => {
     e.preventDefault()
+    if(userName.trim().length < 3 ){
+       return alert('Username length should be three or more')
+    }
     dispatch(userAction(userName))
     closeModalHandle()
   }

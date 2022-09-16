@@ -12,6 +12,9 @@ function EditTodoModal({data, outClickRef}) {
 
   const formSubmit = (e) => {
     e.preventDefault()
+    if(content.trim().length < 3 ){
+       return alert('Todo length should be three or more')
+    }
     dispatch(updateTodo(data.id, {
       content
     }))
